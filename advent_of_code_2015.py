@@ -13,3 +13,9 @@ print("-----")
 # Run Puzzle-03
 from puzzle_03 import puzzle_03
 puzzle_03.solve()
+
+print("-----")
+
+# Run Puzzle-04
+from puzzle_04 import puzzle_04
+puzzle_04.solve()

@@ -26,6 +26,6 @@ def solve():
 
     for puzzle_input in read_puzzle_input(os.path.dirname(os.path.abspath(__file__)), "puzzle_04_input.txt"):
 
-        print("Puzzle04, part A:{}".format(getAdventCoin(puzzle_input, length=5)))
-        print("Puzzle04, part B:{}".format(getAdventCoin(puzzle_input, length=6)))
+        print("Puzzle04, part A:{}".format(getAdventCoin(puzzle_input, 5)))
+        print("Puzzle04, part B:{}".format(getAdventCoin(puzzle_input, 6)))
 

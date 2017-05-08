@@ -2,6 +2,9 @@ from puzzle_commons.Point import Point
 
 class LightGrid():
     def __init__(self,sizeX, sizeY):
+        self.sizeX = sizeX
+        self.sizeY = sizeY
+
         self.lights = {}
 
         for i in range(sizeX+1):
@@ -43,6 +46,39 @@ class LightGrid():
 
         return total_brightness
 
+    """
+    I was curious, whether topaz (Eric Wastl) - AdventOfCode author is trying to tell us something.
+    
+    For this reason I decided to create heat-maps (https://en.wikipedia.org/wiki/Heat_map) for each solution (part A, part B).
+    I used plotly library (https://plot.ly/) in it's basic form.
+    
+    For more information, check the website mentioned, namely https://plot.ly/python/heatmaps/ for heatmap.
+    
+    In order to draw the map, I used instructions from puzzle in [x;y] format.
+    NOTE: THIS IS NOT REQUIRED TO SOLVE THE PUZZLES
+    """
+    def draw(self):
+        import plotly
+        import plotly.plotly as py
+        import plotly.graph_objs as go
+
+        # Visit https://plot.ly/python/heatmaps/, https://plot.ly/python/getting-started/ to get your user_name and api_key
+        plotly.tools.set_credentials_file(username='PUT_YOUR_USER_NAME_HERE', api_key='PUT_YOUR_API_KEY_HERE')
+
+        rows=[]
+        for y in range(self.sizeY+1):
+            row = []
+            for x in range(self.sizeX+1):
+                row.append(self.lights.get(Point(x,y)))
+
+            rows.append(row)
+
+        trace = go.Heatmap(z=rows)
+
+        data = [trace]
+        py.iplot(data, filename='basic-heatmap')
+
+
 class DimmableLightGrid(LightGrid):
 
     def _turnLightOn(self, pointToTurnOn):
@@ -54,6 +90,7 @@ class DimmableLightGrid(LightGrid):
     def _toggleLight(self, pointToToggle):
         self._turnLightOn(pointToToggle)
         self._turnLightOn(pointToToggle)
+
 
 
 def solve():
@@ -88,3 +125,7 @@ def solve():
 
     print("Puzzle06, part A:{}".format(puzzle_part_A.getTotalBrightness()))
     print("Puzzle06, part B:{}".format(puzzle_part_B.getTotalBrightness()))
+
+    # OPTIONAL: Draw HeatMaps
+    # puzzle_part_A.draw()
+    # puzzle_part_B.draw()

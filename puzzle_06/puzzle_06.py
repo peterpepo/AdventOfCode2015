@@ -69,7 +69,6 @@ def solve():
 
 
     for puzzle_input in read_puzzle_input(os.path.dirname(os.path.abspath(__file__)), "puzzle_06_input.txt"):
-        import re
 
         lightInstructionMatcher = re.search(r"(toggle|(?<=turn.)on|off)\D+(\d+,\d+)\D+(\d+,\d+)", puzzle_input)
 

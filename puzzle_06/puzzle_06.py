@@ -8,32 +8,32 @@ class LightGrid():
             for j in range(sizeY+1):
                 self.lights[Point(i,j)] = 0
 
-    def __turnLightOn(self, pointToTurnOn):
+    def _turnLightOn(self, pointToTurnOn):
         self.lights[pointToTurnOn] = 1
 
     def turnRangeOn(self, startPointX, startPointY, endPointX, endPointY):
         for i in range (startPointX, endPointX+1):
             for j in range(startPointY, endPointY + 1):
-                self.__turnLightOn(Point(i, j))
+                self._turnLightOn(Point(i, j))
 
-    def __turnLightOff(self, pointToTurnOff):
+    def _turnLightOff(self, pointToTurnOff):
         self.lights[pointToTurnOff] = 0
 
     def turnRangeOff(self, startPointX, startPointY, endPointX, endPointY):
         for i in range (startPointX, endPointX+1):
             for j in range(startPointY, endPointY + 1):
-                self.__turnLightOff(Point(i, j))
+                self._turnLightOff(Point(i, j))
 
-    def __toggleLight(self, pointToToggle):
+    def _toggleLight(self, pointToToggle):
         if self.lights[pointToToggle] == 1:
-            self.__turnLightOff(pointToToggle)
+            self._turnLightOff(pointToToggle)
         else:
-            self.__turnLightOn(pointToToggle)
+            self._turnLightOn(pointToToggle)
 
     def toggleRange(self, startPointX, startPointY, endPointX, endPointY):
         for i in range (startPointX, endPointX+1):
             for j in range(startPointY, endPointY + 1):
-                self.__toggleLight(Point(i, j))
+                self._toggleLight(Point(i, j))
 
     def getTotalBrightness(self):
         total_brightness = 0
@@ -45,15 +45,15 @@ class LightGrid():
 
 class DimmableLightGrid(LightGrid):
 
-    def __turnLightOn(self, pointToTurnOn):
+    def _turnLightOn(self, pointToTurnOn):
         self.lights[pointToTurnOn] += 1
 
-    def __turnLightOff(self, pointToTurnOff):
+    def _turnLightOff(self, pointToTurnOff):
         self.lights[pointToTurnOff] = max(self.lights[pointToTurnOff]-1, 0)
 
-    def __toggleLight(self, pointToToggle):
-        self.__turnLightOn(pointToToggle)
-        self.__turnLightOn(pointToToggle)
+    def _toggleLight(self, pointToToggle):
+        self._turnLightOn(pointToToggle)
+        self._turnLightOn(pointToToggle)
 
 
 def solve():

@@ -43,3 +43,9 @@ print("-----")
 # Run Puzzle-09
 from puzzle_09 import puzzle_09
 puzzle_09.solve()
+
+print("-----")
+
+# Run Puzzle-10
+from puzzle_10 import puzzle_10
+puzzle_10.solve()

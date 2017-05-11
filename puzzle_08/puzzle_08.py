@@ -25,11 +25,10 @@ def solve():
     puzzle_b_result = 0
 
     # Load instructions
-    for puzzle_input in read_puzzle_input(os.path.dirname(os.path.abspath(__file__)), "puzzle_09_input.txt"):
+    for puzzle_input in read_puzzle_input(os.path.dirname(os.path.abspath(__file__)), "puzzle_08_input.txt"):
         # Total length + length of original input - length of string without quotes
         puzzle_a_result = puzzle_a_result + len(puzzle_input) - len(part_a(puzzle_input))
         puzzle_b_result = puzzle_b_result + len(part_b(puzzle_input)) - len(puzzle_input) + 2
 
     print("Puzzle08, part A:{}".format(puzzle_a_result))
     print("Puzzle08, part B:{}".format(puzzle_b_result))
-solve()

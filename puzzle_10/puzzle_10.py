@@ -16,8 +16,6 @@ def look_and_say(source_string):
         else:
             occurrences += 1
 
-    output_string = output_string + str(occurrences) + last_character
-
     return output_string
 
 def solve():

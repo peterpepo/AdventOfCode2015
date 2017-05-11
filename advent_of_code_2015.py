@@ -40,6 +40,12 @@ puzzle_07.solve()
 
 print("-----")
 
+# Run Puzzle-08
+from puzzle_08 import puzzle_08
+puzzle_08.solve()
+
+print("-----")
+
 # Run Puzzle-09
 from puzzle_09 import puzzle_09
 puzzle_09.solve()

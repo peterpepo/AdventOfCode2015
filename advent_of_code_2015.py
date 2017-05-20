@@ -58,6 +58,12 @@ puzzle_10.solve()
 
 print("-----")
 
+# Run Puzzle-11
+from puzzle_11 import puzzle_11
+puzzle_11.solve()
+
+print("-----")
+
 # Run Puzzle-12
 from puzzle_12 import puzzle_12
 puzzle_12.solve()

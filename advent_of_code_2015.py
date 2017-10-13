@@ -68,6 +68,22 @@ print("-----")
 from puzzle_12 import puzzle_12
 puzzle_12.solve()
 
+print("-----")
+
 # Run Puzzle-13
 from puzzle_13 import puzzle_13
 puzzle_13.solve()
+
+print("-----")
+
+# Run Puzzle-14 - PLACEHOLDER
+
+print("-----")
+
+# Run Puzzle-15 - PLACEHOLDER
+
+print("-----")
+
+# Run Puzzle-16
+from puzzle_16 import puzzle_16
+puzzle_16.solve()

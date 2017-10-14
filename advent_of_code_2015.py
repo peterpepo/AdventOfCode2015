@@ -87,3 +87,9 @@ print("-----")
 # Run Puzzle-16
 from puzzle_16 import puzzle_16
 puzzle_16.solve()
+
+print("-----")
+
+# Run Puzzle-17
+from puzzle_17 import puzzle_17
+puzzle_17.solve()

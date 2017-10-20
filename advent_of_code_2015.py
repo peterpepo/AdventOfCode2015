@@ -94,6 +94,17 @@ print("-----")
 from puzzle_17 import puzzle_17
 puzzle_17.solve()
 
+print("-----")
+
 # Run Puzzle-18
 from puzzle_18 import puzzle_18
 puzzle_18.solve()
+
+# Run Puzzle-19-PLACEHOLDER
+# Run Puzzle-20-PLACEHOLDER
+# Run Puzzle-21-PLACEHOLDER
+# Run Puzzle-22-PLACEHOLDER
+
+# Run Puzzle-23
+from puzzle_23 import puzzle_23
+puzzle_23.solve()

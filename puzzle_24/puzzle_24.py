@@ -3,7 +3,7 @@ import os
 import itertools
 
 
-def solve():
+def solve_a():
     numbers = []
     # TEST INPUT
     # for puzzle_row in read_puzzle_input(os.path.dirname(os.path.abspath(__file__)), "puzzle_24_test_input.txt"):
@@ -125,4 +125,28 @@ def solve_b():
                             # print("{}, {}, {}".format(group, group2nd, reduced_group2nd))
     print("Equantum: {}".format(enquantum))
 
-solve_b()
+def solve():
+    numbers = []
+    # Load test puzzle input
+    for puzzle_row in read_puzzle_input(os.path.dirname(os.path.abspath(__file__)), "puzzle_24_test_input.txt"):
+        numbers.append(int(puzzle_row.strip()))
+
+    def split_in_equal_parts(list_of_numbers, parts):
+
+        # Find all combinations of length 1 - (list_of_numbers-parts+1)
+        ## e.g: there are 5 numbers to split in 3 groups;
+        ### find combinations of 'up to 3' (5-3+1) = 3
+        ### each group must contain at least 1 number
+        max_comb_length = len(list_of_numbers)-parts+1
+
+        for comb_length in range(1, max_comb_length):
+
+            all_combinations = itertools.combinations(numbers, comb_length)
+
+            # Check each combination, whether it gives sum of sum(list_of_numbers/parts)
+            for tested_combination in all_combinations:
+                if sum(tested_combination) == sum(list_of_numbers)/parts:
+
+
+# solve_a()
+# solve_b()
